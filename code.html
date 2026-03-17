@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Notes &mdash; Anshu Mishra</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  background: #fefefe;
+  color: #222;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.topnav {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 56px;
+  letter-spacing: 0.04em;
+}
+
+.topnav a {
+  color: #999;
+  text-decoration: none;
+  margin-right: 18px;
+}
+
+.topnav a:hover { color: #333; text-decoration: underline; }
+
+.topnav .current { color: #444; }
+
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  color: #111;
+}
+
+.tagline {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12.5px;
+  color: #aaa;
+  margin-bottom: 40px;
+  letter-spacing: 0.06em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 40px 0;
+}
+
+.label {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #bbb;
+  margin-bottom: 14px;
+}
+
+p {
+  margin-bottom: 18px;
+  color: #555;
+  font-size: 15.5px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+a { color: #333; text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: #000; }
+
+/* ---- semester group ---- */
+.semester {
+  margin-bottom: 40px;
+}
+
+.semester-title {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11.5px;
+  color: #bbb;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* ---- individual course row ---- */
+.course {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.course:last-child { border-bottom: none; }
+
+.course-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.course-code {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11px;
+  color: #ccc;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.course-name {
+  font-size: 15.5px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.course-links {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.course-links a {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11.5px;
+  color: #aaa;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.course-links a:hover { color: #333; text-decoration: underline; }
+
+/* pdf link gets a tiny indicator */
+.course-links a.pdf::before {
+  content: 'pdf ';
+  color: #ccc;
+}
+
+.course-links a.overleaf::before {
+  content: 'overleaf ';
+  color: #ccc;
+}
+
+/* no link yet — greyed out placeholder */
+.no-link {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11.5px;
+  color: #ddd;
+  letter-spacing: 0.03em;
+}
+
+footer {
+  margin-top: 70px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11.5px;
+  color: #ccc;
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="index.html">about</a>
+  <a href="index.html#work">work</a>
+  <a href="index.html#interests">interests</a>
+  <span class="current">notes</span>
+  <a href="mailto:anshumishra1729@gmail.com" style="margin-left:6px;">email</a>
+</nav>
+
+<h1>Notes</h1>
+<p class="tagline">course notes &middot; IISER Berhampur</p>
+
+<p>Notes from courses I've taken, typeset in LaTeX. Some are fairly complete, others are just reading notes or problem sets. Use at your own risk &mdash; there will be errors.</p>
+
+<hr/>
+
+<!-- ===================== SEMESTER 1 ===================== -->
+<div class="semester">
+  
+
+  <div class="course">
+    <div class="course-left">
+      <span class="course-code">MTH 102</span>
+      <span class="course-name">Calculus I</span>
+    </div>
+    <div class="course-links">
+      <!-- Replace # with your actual Overleaf share link -->
+      <a class="pdf" href="#" target="_blank" rel="noopener">↗</a>
+      <a class="overleaf" href="#" target="_blank" rel="noopener">↗</a>
+    </div>
+
+
+</div>
+
+<!--
+  HOW TO ADD A COURSE:
+  Copy this block and paste it inside the right semester <div class="semester">:
+
+  <div class="course">
+    <div class="course-left">
+      <span class="course-code">MTH 000</span>
+      <span class="course-name">Course Name Here</span>
+    </div>
+    <div class="course-links">
+      <a class="pdf" href="YOUR_PDF_LINK" target="_blank" rel="noopener">↗</a>
+      <a class="overleaf" href="YOUR_OVERLEAF_LINK" target="_blank" rel="noopener">↗</a>
+    </div>
+  </div>
+
+  If a link doesn't exist yet, replace the <a> with:
+  <span class="no-link">pdf —</span>
+-->
+
+<hr/>
+
+<p style="font-size:14px; color:#aaa; font-family:'Source Code Pro',monospace; letter-spacing:0.03em;">
+  If you spot a mistake, email me. 
+  
+  I will be adding some more resources here!
+</p>
+
+<footer>anshu mishra &middot; iiser berhampur</footer>
+
+</body>
+</html>
