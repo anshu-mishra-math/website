@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Anshu Mishra</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  background: #fefefe;
+  color: #222;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.topnav {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 56px;
+  letter-spacing: 0.04em;
+}
+
+.topnav a {
+  color: #999;
+  text-decoration: none;
+  margin-right: 18px;
+}
+
+.topnav a:hover { color: #333; text-decoration: underline; }
+
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  color: #111;
+}
+
+.tagline {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12.5px;
+  color: #aaa;
+  margin-bottom: 40px;
+  letter-spacing: 0.06em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 40px 0;
+}
+
+.label {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #bbb;
+  margin-bottom: 14px;
+}
+
+p {
+  margin-bottom: 18px;
+  color: #333;
+}
+
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: #333;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover { color: #000; }
+
+.interests-list {
+  list-style: none;
+  color: #555;
+  font-size: 16px;
+}
+
+.interests-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.interests-list li::before {
+  content: '--';
+  color: #ccc;
+  font-size: 14px;
+  font-family: 'Source Code Pro', monospace;
+  flex-shrink: 0;
+}
+
+.work-item {
+  padding: 14px 0 14px 18px;
+  border-left: 2px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.work-item strong {
+  display: block;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 4px;
+  font-size: 15.5px;
+}
+
+.work-item p {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+}
+
+.links a {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12.5px;
+  color: #888;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.links a:hover { color: #333; text-decoration: underline; }
+
+footer {
+  margin-top: 70px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 11.5px;
+  color: #ccc;
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="#about">about</a>
+  <a href="#work">work</a>
+  <a href="#interests">interests</a>
+  <a href="mailto:anshu22@iiserbpr.ac.in">email</a>
+</nav>
+
+<h1>Anshu Mishra</h1>
+<p class="tagline">math undergrad &middot; IISER Berhampur</p>
+
+<hr id="about"/>
+
+<div class="label">About</div>
+
+<p>Hi.I am Anshu, a fourth-year BSMS student at IISER Berhampur, majoring in Mathematics.My primary research interests lie in Mathematical Biology, with a specific focus on the mechanics of climate warming and its cascading effects on ectotherm ecosystems for now.
+<p>I also have a blog &mdash; <a href="https://mathematabio.substack.com/" target="_blank" rel="noopener">mathematabio</a> &mdash; where I write about modelling and related things.</p>
+
+<p>Reach me at <a href="mailto:anshum22@iiserbpr.ac.in">anshumishra1729@gmail.com</a>.</p>
+
+<hr id="work"/>
+
+<div class="label">Current work</div>
+
+<div class="work-item">
+  <strong>Ms-Thesis</strong>
+  <p>I have started my MS project, which deals with mathematical modelling of ectotherms' ecology </p>
+</div>
+
+<div class="work-item">
+  <strong>light reading</strong>
+  <p>I am learning operator theory from the Kato's notes.</p>
+</div>
+
+<hr id="interests"/>
+
+<div class="label">Interests</div>
+
+<ul class="interests-list">
+  <li>Mathematical biology</li>
+  <li>Dynamical systems &amp; ODEs / DDEs</li>
+  <li>Theoretical ecology</li>
+  <li>Stochastic processes</li>
+  <li>Bioinformatics</li>
+  <li>Machine learning in biology</li>
+</ul>
+
+<hr/>
+
+<div class="label">Elsewhere</div>
+
+<div class="links">
+  <a href="https://mathematabio.substack.com/" target="_blank" rel="noopener">blog (substack)</a>
+
+  <a href="https://sites.google.com/view/anshum/notes" target="_blank" rel="noopener">notes</a>
+  <a href="https://sites.google.com/view/anshum/cv-and-coursework" target="_blank" rel="noopener">cv &amp; coursework</a>
+</div>
+
+<footer>Anshu Mishra &middot; IISER Berhampur</footer>
+
+</body>
+</html>
