@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Research — Anshu Mishra</title>
+<meta name="description" content="Research on MTE-IPM mathematical formalism, operator theory, and mathematical biology."/>
+<link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">anshu mishra</a>
+    <div class="nav-links">
+      <a href="index.html">home</a>
+      <a href="research.html" class="active">research</a>
+      <a href="notes.html">notes</a>
+      <a href="interests.html">interests</a>
+      <a href="writing.html">writing</a>
+      <a href="cv.html">cv</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="fade-up" style="padding-top:8px;">
+    <span class="label">Research</span>
+    <h1 style="margin-top:10px; margin-bottom:16px;">Mathematical formalism<br/>of metabolic ecology</h1>
+    <p style="font-family:var(--serif); font-style:italic; font-size:1.1rem; color:var(--ink-3); max-width:480px; margin-bottom:0;">
+      How do the operator-theoretic properties of population models change when their biological inputs are constrained by metabolic scaling laws?
+    </p>
+  </div>
+
+  <hr class="rule"/>
+
+  <!-- ── MAIN PROJECT ── -->
+  <section class="fade-up-2">
+    <h2 style="margin-top:0;">MS Project: MTE-IPM</h2>
+
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px;">
+      <span class="tag tag-bio">Mathematical Biology</span>
+      <span class="tag tag-analysis">Operator Theory</span>
+      <span class="tag tag-kato">Perturbation Theory</span>
+    </div>
+
+    <p>The <strong>Integral Projection Model</strong> (IPM) is a framework for continuously size-structured populations. The population density $n(m, t)$ by body mass evolves as</p>
+
+    <div style="background:var(--bg-2); border:1px solid var(--rule); border-radius:6px; padding:16px 20px; margin:16px 0; font-family:var(--mono); font-size:14px; color:var(--ink-2); overflow-x:auto;">
+      n(m, t+1) = ∫ 𝒦(m, m') n(m', t) dm'
+    </div>
+
+    <p>where the kernel $\mathcal{K} = P + F$ combines survival-growth and fecundity. The dominant eigenvalue $\lambda_1$ of the operator $\mathcal{K}$ governs asymptotic population growth — if $\lambda_1 > 1$ the population is supercritical; if $\lambda_1 < 1$ extinction is certain.</p>
+
+    <p>The <strong>Metabolic Theory of Ecology</strong> (MTE, Brown et al. 2004) provides a principled derivation of vital rates from body mass $m$ and temperature $T$:</p>
+
+    <div style="background:var(--bg-2); border:1px solid var(--rule); border-radius:6px; padding:16px 20px; margin:16px 0; font-family:var(--mono); font-size:13px; color:var(--ink-2); line-height:2;">
+      growth rate  ∝ m<sup>¼</sup> · e<sup>−E/kT</sup><br/>
+      mortality    ∝ m<sup>−¼</sup> · e<sup>−E/kT</sup><br/>
+      fecundity    ∝ m<sup>¾</sup> · e<sup>−E/kT</sup>
+    </div>
+
+    <p>When MTE vital rates are substituted into the IPM kernel, the operator $\mathcal{K}$ inherits specific algebraic structure from metabolic scaling. Our project asks: what does this structure imply for the spectral properties of $\mathcal{K}$, and how does $\lambda_1$ behave under perturbation by temperature shifts or resource fluctuations?</p>
+
+    <h3>Mathematical approach</h3>
+
+    <p>The formal framework comes from Kato's <em>Perturbation Theory for Linear Operators</em>. The key ingredients we need: the resolvent $R(\zeta) = (\mathcal{K} - \zeta)^{-1}$ as an analytic operator-valued function; the eigenprojection $P_1$ onto the dominant eigenspace via contour integration; and the analytic perturbation theory of eigenvalues for the temperature-parameterised family $\mathcal{K}(T)$.</p>
+
+    <p>A central open question is whether the Boltzmann factor $e^{-E/kT}$ — which is real-analytic in $T$ — makes $\mathcal{K}(T)$ an analytic family of compact operators in the sense of Kato Ch. VII. If so, $\lambda_1(T)$ would be analytic in temperature, giving a clean functional form for how extinction risk varies with warming.</p>
+
+    <div style="background:var(--accent-3); border-left:2px solid var(--accent-2); border-radius:0 4px 4px 0; padding:14px 18px; margin:20px 0;">
+      <p style="font-size:14px; margin:0; color:var(--ink-2);">
+        <strong style="font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-2);">Collaborators</strong><br/>
+        <span style="font-family:var(--serif);">Samraat Pawar</span> &amp; <span style="font-family:var(--serif);">Olivia Morris</span> · Imperial College London<br/>
+        Weekly project meetings · ongoing since 2025
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule"/>
+
+  <!-- ── BACKGROUND READING ── -->
+  <section class="fade-up-3">
+    <h2>Background and reading</h2>
+
+    <div class="work-item">
+      <div class="wi-title">Kato — Perturbation Theory for Linear Operators</div>
+      <div class="wi-meta">Primary text · reading ongoing</div>
+      <div class="wi-body">Building the operator-theoretic foundations from Ch. I (finite-dimensional) through Ch. II–III (bounded operators on Banach spaces) toward Ch. VII (analytic perturbation theory). Weekly reading logs on the <a href="notes.html">notes page</a>.</div>
+    </div>
+
+    <div class="work-item">
+      <div class="wi-title">Rudin — Real and Complex Analysis</div>
+      <div class="wi-meta">Foundation · Measure Theory course</div>
+      <div class="wi-body">The measure-theoretic language underlying integration in infinite-dimensional function spaces — $L^2$, Hilbert-Schmidt operators, spectral measures. Essential for carrying IPM integrals into a rigorous analytic framework.</div>
+    </div>
+
+    <div class="work-item">
+      <div class="wi-title">Brown et al. (2004) — Toward a metabolic theory of ecology</div>
+      <div class="wi-meta">MTE foundational paper · Ecology 85(7)</div>
+      <div class="wi-body">The source of the metabolic scaling laws the project imports into the IPM kernel. The mathematical formalism question begins here: these are empirical scaling laws — what operator-theoretic properties do they imply?</div>
+    </div>
+  </section>
+
+  <hr class="rule"/>
+
+  <!-- ── EARLIER INTERESTS ── -->
+  <section class="fade-up-4">
+    <h2>Earlier interests</h2>
+    <p>Before settling on the MTE-IPM direction, my reading arc went: theoretical biology papers → frustration at informal reasoning → stochastic processes (self-studied, summer 2024) → measure theory → operator theory. The thread was always: what is the right mathematical language for biological dynamics?</p>
+    <p>I remain interested in stochastic population models, particularly how demographic stochasticity enters the IPM framework and whether mean-time-to-extinction results can be obtained analytically from the spectral data.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>Anshu Mishra · IISER Berhampur</span>
+    <span><a href="mailto:anshumishra1729@gmail.com">anshumishra1729@gmail.com</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
