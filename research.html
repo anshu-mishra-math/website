@@ -47,23 +47,55 @@
 
     <p>The <strong>Integral Projection Model</strong> (IPM) is a framework for continuously size-structured populations. The population density $n(m, t)$ by body mass evolves as</p>
 
-    <div style="background:var(--bg-2); border:1px solid var(--rule); border-radius:6px; padding:16px 20px; margin:16px 0; font-family:var(--mono); font-size:14px; color:var(--ink-2); overflow-x:auto;">
-      n(m, t+1) = ∫ 𝒦(m, m') n(m', t) dm'
-    </div>
+  <P>This MS thesis develops a rigorous operator-theoretic framework for the Metabolic Inte-
+gral Projection Model (MIPM), a class of continuous-state population models in math-
+ematical ecology, with the primary contribution directed squarely at functional analysis
 
-    <p>where the kernel $\mathcal{K} = P + F$ combines survival-growth and fecundity. The dominant eigenvalue $\lambda_1$ of the operator $\mathcal{K}$ governs asymptotic population growth — if $\lambda_1 > 1$ the population is supercritical; if $\lambda_1 < 1$ extinction is certain.</p>
+and spectral theory. The central object of study is the integral operator K : C(Ω) → C(Ω)
+defined by
 
-    <p>The <strong>Metabolic Theory of Ecology</strong> (MTE, Brown et al. 2004) provides a principled derivation of vital rates from body mass $m$ and temperature $T$:</p>
+(Kφ)(z
+′
+) = Z
+Ω
+K(z
+′
+, z; T)φ(z) dz, (1)
+where Ω ⊂ R+ is a compact size domain and T a real parameter; the first objective is to
+prove compactness of K via the Arzel`a–Ascoli theorem, establishing that the spectrum
+of K admits a Riesz–Schauder decomposition and may be analysed by the same tools as
+finite-dimensional matrices. The second objective applies the Krein–Rutman theorem —
+the infinite-dimensional generalisation of the Perron–Frobenius theorem — to an ordered
+Banach space setting, yielding a complete proof of the existence, simplicity, and strict
 
-    <div style="background:var(--bg-2); border:1px solid var(--rule); border-radius:6px; padding:16px 20px; margin:16px 0; font-family:var(--mono); font-size:13px; color:var(--ink-2); line-height:2;">
-      growth rate  ∝ m<sup>¼</sup> · e<sup>−E/kT</sup><br/>
-      mortality    ∝ m<sup>−¼</sup> · e<sup>−E/kT</sup><br/>
-      fecundity    ∝ m<sup>¾</sup> · e<sup>−E/kT</sup>
-    </div>
+positivity of the spectral radius r(K) as a dominant eigenvalue with a corresponding pos-
+itive eigenfunction; this constitutes a self-contained contribution to the theory of positive
 
-    <p>When MTE vital rates are substituted into the IPM kernel, the operator $\mathcal{K}$ inherits specific algebraic structure from metabolic scaling. Our project asks: what does this structure imply for the spectral properties of $\mathcal{K}$, and how does $\lambda_1$ behave under perturbation by temperature shifts or resource fluctuations?</p>
+operators on ordered Banach spaces. The third and mathematically deepest objective ap-
+plies Kato’s analytic perturbation theory for linear operators to the parameterised family
 
-    <h3>Mathematical approach</h3>
+{K(T)}T ∈I , deriving the first-order expansion
+dλ1
+dT =
+⟨ψ1, K′
+(T)φ1⟩
+⟨ψ1, φ1⟩
+
+(2)
+
+via resolvent calculus, with full attention to the analytic dependence of spectral projec-
+tions on the parameter T; the ecological motivation for this formula — quantifying how
+
+a population growth rate responds to thermal perturbation — serves only as the applied
+context, while the mathematical content is a concrete instantiation of Kato’s theory for
+a class of integral operators not previously treated in this generality. The thesis will
+be conducted under the supervision of Dr. Samraat Pawar (Imperial College London),
+with me spending five months on-site at Imperial, and will be written to the standard
+
+of mathematical exposition expected at IISER Berhampur, with all biological quanti-
+ties re-derived from first principles as corollaries of operator-theoretic results — making
+
+this, in character and in contribution, a thesis in applied functional analysis<
 
     <p>The formal framework comes from Kato's <em>Perturbation Theory for Linear Operators</em>. The key ingredients we need: the resolvent $R(\zeta) = (\mathcal{K} - \zeta)^{-1}$ as an analytic operator-valued function; the eigenprojection $P_1$ onto the dominant eigenspace via contour integration; and the analytic perturbation theory of eigenvalues for the temperature-parameterised family $\mathcal{K}(T)$.</p>
 
