@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kato Ch. I §2–6 — Anshu Mishra</title>
+<link rel="stylesheet" href="../assets/style.css"/>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$','$'],['\\(','\\)']],
+    displayMath: [['$$','$$'],['\\[','\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="../index.html">anshu mishra</a>
+    <div class="nav-links">
+      <a href="../index.html">home</a>
+      <a href="../research.html">research</a>
+      <a href="../notes.html" class="active">notes</a>
+      <a href="../interests.html">interests</a>
+      <a href="../writing.html">writing</a>
+      <a href="../cv.html">cv</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="note-header fade-up">
+    <div class="note-meta-row">
+      <span class="tag tag-kato">kato log</span>
+      <span style="font-family:var(--mono); font-size:11px; color:var(--ink-4);">2026-03-22</span>
+    </div>
+    <h1>Ch. I §2–6: operators, resolvent,<br/>spectral decomposition</h1>
+    <p class="note-strap">Finite-dimensional foundations of perturbation theory</p>
+    <p class="note-source">T. Kato, <em>Perturbation Theory for Linear Operators</em> · Ch. I Part 2<br/>
+    Project: MTE-IPM formalism with Samraat Pawar &amp; Olivia Morris, Imperial College London</p>
+    <a class="pdf-btn" href="../pdfs/kato/kato-ch1-part2.pdf" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+        <path d="M4 2h6l3 3v9H4V2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M9 2v4h3" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M6 9h4M6 11.5h2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+      </svg>
+      kato-ch1-part2.pdf
+    </a>
+  </div>
+
+  <hr class="rule"/>
+
+  <div class="note-body fade-up-2">
+
+    <h2 style="margin-top:0;">What I read</h2>
+
+    <p>Kato Ch. I Part 2 develops the theory of linear operators on finite-dimensional normed spaces: operator norm and convergence, the Neumann series and invertibility, projections ($P^2 = P$), the eigenvalue problem, and the resolvent $R(\zeta) = (T - \zeta)^{-1}$ as an analytic function on the resolvent set. The culmination is the spectral decomposition and the contour-integral formula for eigenprojections.</p>
+
+    <p>The reason this matters for the MTE-IPM project: the IPM propagator $\mathcal{K}$ is an integral operator acting on population density by body mass, and its dominant eigenvalue $\lambda_1$ governs asymptotic population growth. In MTE, vital rates inside the kernel scale as $m^\alpha \cdot e^{-E/kT}$ where $\alpha$ depends on the process. Kato's Part 2 is the exact foundation for asking how $\lambda_1$ moves when the kernel is perturbed by temperature or resource shifts.</p>
+
+    <h2>Key theorems</h2>
+
+    <div class="thm">
+      <strong>Neumann series (§I.4).</strong> If $\|S\| < 1$ then $(I - S)^{-1} = \sum_{n=0}^\infty S^n$. Corollary: any operator within distance $\|T^{-1}\|^{-1}$ of an invertible $T$ is itself invertible. This is the first perturbation radius.
+    </div>
+
+    <div class="thm">
+      <strong>Resolvent identity (§I.5).</strong>
+      $$R(\zeta) - R(\zeta') = (\zeta - \zeta')\,R(\zeta)\,R(\zeta').$$
+      The backbone of all perturbation expansions in later chapters.
+    </div>
+
+    <div class="thm">
+      <strong>Eigenprojection via contour integral (§I.6).</strong>
+      $$P = -\frac{1}{2\pi i} \oint_\Gamma R(\zeta)\,d\zeta,$$
+      where $\Gamma$ isolates $\lambda$ from the rest of $\sigma(T)$. At a simple eigenvalue: $R(\zeta) = -P/(\zeta - \lambda) + \text{holomorphic}$.
+    </div>
+
+    <div class="rmk">
+      <strong>Why this matters for IPMs.</strong> In an IPM the dominant right eigenvector is the stable body-mass distribution; the left eigenvector is reproductive value by mass. The eigenprojection $P_1$ encodes both. The contour integral formula is how we recover $P_1$ analytically — and how we differentiate it with respect to temperature in perturbation theory.
+    </div>
+
+    <h2>Proof reconstructed from scratch</h2>
+
+    <div class="scratch">
+      <strong>Claim:</strong> $R(\zeta) = (T-\zeta)^{-1}$ is analytic on the resolvent set.<br/><br/>
+      Fix $\zeta_0$ in the resolvent set. Write $T - \zeta = (T - \zeta_0)[I - (\zeta - \zeta_0)R(\zeta_0)]$.
+      Set $S = (\zeta - \zeta_0)R(\zeta_0)$. When $|\zeta - \zeta_0| < \|R(\zeta_0)\|^{-1}$ we have $\|S\| < 1$, so:
+      $$(I-S)^{-1} = \sum_{n \geq 0} (\zeta - \zeta_0)^n R(\zeta_0)^n.$$
+      Therefore $R(\zeta) = \sum_{n \geq 0} (\zeta - \zeta_0)^n R(\zeta_0)^{n+1}$, a convergent power series. $\square$
+      <div class="scratch-note">Time: ~10 min. Step I kept getting wrong: must factor $(T - \zeta_0)$ on the left so $R(\zeta_0)$ appears as right-multiplication. In finite dimensions this is harmless, but Kato notes explicitly the ordering matters in infinite dimensions. Training the right habit now.</div>
+    </div>
+
+    <h2>Connection to MTE-IPM</h2>
+
+    <div class="ipm-link">
+      <p>The IPM propagator is $n(m,t+1) = \int \mathcal{K}(m,m')\,n(m',t)\,dm'$ where $\mathcal{K} = P + F$. In MTE the kernel inherits metabolic scaling: vital rates go as $m^\alpha \cdot e^{-E/kT}$.</p>
+      <p style="margin-top:.75rem;">Kato's Part 2 gives me the language for the formalism question. The next step is carrying these tools into infinite dimensions (Ch. II–III) and exploiting the analytic structure of the MTE kernel (Ch. VII). The key bridge: understanding why the IPM operator on a bounded mass range is compact — and what compactness buys for spectral theory.</p>
+    </div>
+
+  </div>
+
+  <hr class="rule"/>
+
+  <div class="fade-up-3">
+    <h3>Open questions — for Friday meeting</h3>
+    <div class="open-qs">
+      <ul>
+        <li>The contour integral $P = -(2\pi i)^{-1}\oint R(\zeta)\,d\zeta$ works in finite dimensions. In the MTE-IPM setting $\mathcal{K}$ acts on $L^2$ — does it still converge in operator norm? Under what conditions on the kernel?</li>
+        <li>Can Jordan blocks occur in an IPM with MTE-derived kernel? I suspect Perron–Frobenius for positive kernels rules this out — but does the project assume simplicity of $\lambda_1$, or does it need to be proved?</li>
+        <li>The Boltzmann factor $e^{-E/kT}$ is real-analytic in $T$. Does this make $\mathcal{K}(T)$ an analytic family of operators (Kato Ch. VII)? If so, $\lambda_1(T)$ is analytic in temperature — a very clean result.</li>
+      </ul>
+    </div>
+
+    <h3>Next steps</h3>
+    <div class="next-steps-block">
+      <ol>
+        <li>Read Kato Ch. II §1–3 — bounded operators on Banach spaces, infinite-dimensional resolvent. Check which proofs from Ch. I carry over unchanged.</li>
+        <li>Find one paper from Olivia/Samraat's group. Check: which function space do they use for the IPM density? Do they invoke compactness of the kernel explicitly?</li>
+        <li>Verify the Hilbert–Schmidt claim: check whether $\iint |\mathcal{K}(m',m)|^2\,dm\,dm' < \infty$ for a concrete MTE kernel on a bounded mass domain.</li>
+      </ol>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>Anshu Mishra · IISER Berhampur</span>
+    <span><a href="../notes.html">← all notes</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
