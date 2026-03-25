@@ -3,137 +3,224 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kato Ch. I §2–6 — Anshu Mishra</title>
-<link rel="stylesheet" href="../assets/style.css"/>
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$','$'],['\\(','\\)']],
-    displayMath: [['$$','$$'],['\\[','\\]']]
-  }
-};
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<title>Notes &mdash; Anshu Mishra</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.75;
+  background: #fff;
+  color: #000;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 80px 20px 120px;
+}
+
+nav {
+  margin-bottom: 64px;
+  font-size: 15px;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+nav a:hover { text-decoration: underline; }
+
+h1 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 19px;
+  font-weight: 400;
+  margin: 48px 0 12px;
+}
+
+p {
+  margin-bottom: 16px;
+  font-size: 17px;
+  color: #333;
+}
+
+a { color: #000; }
+a:hover { text-decoration: none; }
+
+/* course table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+tr {
+  border-bottom: 1px solid #eee;
+}
+
+tr:last-child { border-bottom: none; }
+
+td {
+  padding: 9px 0;
+  vertical-align: baseline;
+}
+
+td.code {
+  color: #999;
+  font-size: 14px;
+  width: 64px;
+  padding-right: 12px;
+}
+
+td.name {
+  color: #000;
+}
+
+td.links {
+  text-align: right;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+td.links a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-left: 14px;
+}
+
+td.links a:hover { text-decoration: none; }
+
+td.links .none {
+  color: #ccc;
+  margin-left: 14px;
+}
+
+/* reading notes block */
+.reading {
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.reading a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: block;
+  padding: 9px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.reading a:hover { text-decoration: none; }
+
+.reading a:last-child { border-bottom: none; }
+
+footer {
+  margin-top: 80px;
+  font-size: 15px;
+  color: #999;
+}
+</style>
 </head>
 <body>
 
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a class="nav-brand" href="../index.html">anshu mishra</a>
-    <div class="nav-links">
-      <a href="../index.html">home</a>
-      <a href="../research.html">research</a>
-      <a href="../notes.html" class="active">notes</a>
-      <a href="../interests.html">interests</a>
-      <a href="../writing.html">writing</a>
-      <a href="../cv.html">cv</a>
-    </div>
-  </div>
+<nav>
+  <a href="index.html">home</a>
+  <a href="notes.html">notes</a>
+  <a href="https://mathematabio.substack.com/" target="_blank" rel="noopener">blog</a>
+  <a href="mailto:anshumishra1729@gmail.com">email</a>
 </nav>
 
-<main class="page">
+<h1>Notes</h1>
 
-  <div class="note-header fade-up">
-    <div class="note-meta-row">
-      <span class="tag tag-kato">kato log</span>
-      <span style="font-family:var(--mono); font-size:11px; color:var(--ink-4);">2026-03-22</span>
-    </div>
-    <h1>Ch. I §2–6: operators, resolvent,<br/>spectral decomposition</h1>
-    <p class="note-strap">Finite-dimensional foundations of perturbation theory</p>
-    <p class="note-source">T. Kato, <em>Perturbation Theory for Linear Operators</em> · Ch. I Part 2<br/>
-    Project: MTE-IPM formalism with Samraat Pawar &amp; Olivia Morris, Imperial College London</p>
-    <a class="pdf-btn" href="../pdfs/kato/kato-ch1-part2.pdf" target="_blank" rel="noopener">
-      <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-        <path d="M4 2h6l3 3v9H4V2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-        <path d="M9 2v4h3" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-        <path d="M6 9h4M6 11.5h2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
-      </svg>
-      kato-ch1-part2.pdf
-    </a>
-  </div>
+<p>Course notes and reading notes, typeset in LaTeX. There will be errors &mdash; email me if you find one.</p>
 
-  <hr class="rule"/>
+<h2>Semester 1</h2>
+<table>
+  <tr>
+    <td class="code">MTH 101</td>
+    <td class="name">Calculus I</td>
+    <td class="links">
+      <a href="calculus1.tex">tex</a>
+      <span class="none">pdf</span>
+      <span class="none">overleaf</span>
+    </td>
+  </tr>
+  <tr>
+    <td class="code">MTH 102</td>
+    <td class="name">Linear Algebra</td>
+    <td class="links">
+      <span class="none">tex</span>
+      <span class="none">pdf</span>
+      <span class="none">overleaf</span>
+    </td>
+  </tr>
+</table>
 
-  <div class="note-body fade-up-2">
+<h2>Semester 2</h2>
+<table>
+  <tr>
+    <td class="code">MTH 201</td>
+    <td class="name">Real Analysis I</td>
+    <td class="links">
+      <span class="none">tex</span>
+      <span class="none">pdf</span>
+      <span class="none">overleaf</span>
+    </td>
+  </tr>
+  <tr>
+    <td class="code">MTH 202</td>
+    <td class="name">Ordinary Differential Equations</td>
+    <td class="links">
+      <span class="none">tex</span>
+      <span class="none">pdf</span>
+      <span class="none">overleaf</span>
+    </td>
+  </tr>
+</table>
 
-    <h2 style="margin-top:0;">What I read</h2>
+<h2>Semester 3</h2>
+<table>
+  <tr>
+    <td class="code">MTH 301</td>
+    <td class="name">Topology</td>
+    <td class="links">
+      <span class="none">tex</span>
+      <span class="none">pdf</span>
+      <span class="none">overleaf</span>
+    </td>
+  </tr>
+  <tr>
+    <td class="code">BIO 210</td>
+    <td class="name">Mathematical Biology</td>
+    <td class="links">
+      <span class="none">tex</span>
+      <span class="none">pdf</span>
+      <span class="none">overleaf</span>
+    </td>
+  </tr>
+</table>
 
-    <p>Kato Ch. I Part 2 develops the theory of linear operators on finite-dimensional normed spaces: operator norm and convergence, the Neumann series and invertibility, projections ($P^2 = P$), the eigenvalue problem, and the resolvent $R(\zeta) = (T - \zeta)^{-1}$ as an analytic function on the resolvent set. The culmination is the spectral decomposition and the contour-integral formula for eigenprojections.</p>
+<!--
+  TO ADD A COURSE: copy a <tr>...</tr> block and fill in the details.
+  To link a file: replace <span class="none">pdf</span> with
+  <a href="YOUR_LINK">pdf</a>
+-->
 
-    <p>The reason this matters for the MTE-IPM project: the IPM propagator $\mathcal{K}$ is an integral operator acting on population density by body mass, and its dominant eigenvalue $\lambda_1$ governs asymptotic population growth. In MTE, vital rates inside the kernel scale as $m^\alpha \cdot e^{-E/kT}$ where $\alpha$ depends on the process. Kato's Part 2 is the exact foundation for asking how $\lambda_1$ moves when the kernel is perturbed by temperature or resource shifts.</p>
+<h2>Reading notes</h2>
 
-    <h2>Key theorems</h2>
+<div class="reading">
+  <a href="kato.html">Kato &mdash; Perturbation Theory for Linear Operators</a>
+</div>
 
-    <div class="thm">
-      <strong>Neumann series (§I.4).</strong> If $\|S\| < 1$ then $(I - S)^{-1} = \sum_{n=0}^\infty S^n$. Corollary: any operator within distance $\|T^{-1}\|^{-1}$ of an invertible $T$ is itself invertible. This is the first perturbation radius.
-    </div>
-
-    <div class="thm">
-      <strong>Resolvent identity (§I.5).</strong>
-      $$R(\zeta) - R(\zeta') = (\zeta - \zeta')\,R(\zeta)\,R(\zeta').$$
-      The backbone of all perturbation expansions in later chapters.
-    </div>
-
-    <div class="thm">
-      <strong>Eigenprojection via contour integral (§I.6).</strong>
-      $$P = -\frac{1}{2\pi i} \oint_\Gamma R(\zeta)\,d\zeta,$$
-      where $\Gamma$ isolates $\lambda$ from the rest of $\sigma(T)$. At a simple eigenvalue: $R(\zeta) = -P/(\zeta - \lambda) + \text{holomorphic}$.
-    </div>
-
-    <div class="rmk">
-      <strong>Why this matters for IPMs.</strong> In an IPM the dominant right eigenvector is the stable body-mass distribution; the left eigenvector is reproductive value by mass. The eigenprojection $P_1$ encodes both. The contour integral formula is how we recover $P_1$ analytically — and how we differentiate it with respect to temperature in perturbation theory.
-    </div>
-
-    <h2>Proof reconstructed from scratch</h2>
-
-    <div class="scratch">
-      <strong>Claim:</strong> $R(\zeta) = (T-\zeta)^{-1}$ is analytic on the resolvent set.<br/><br/>
-      Fix $\zeta_0$ in the resolvent set. Write $T - \zeta = (T - \zeta_0)[I - (\zeta - \zeta_0)R(\zeta_0)]$.
-      Set $S = (\zeta - \zeta_0)R(\zeta_0)$. When $|\zeta - \zeta_0| < \|R(\zeta_0)\|^{-1}$ we have $\|S\| < 1$, so:
-      $$(I-S)^{-1} = \sum_{n \geq 0} (\zeta - \zeta_0)^n R(\zeta_0)^n.$$
-      Therefore $R(\zeta) = \sum_{n \geq 0} (\zeta - \zeta_0)^n R(\zeta_0)^{n+1}$, a convergent power series. $\square$
-      <div class="scratch-note">Time: ~10 min. Step I kept getting wrong: must factor $(T - \zeta_0)$ on the left so $R(\zeta_0)$ appears as right-multiplication. In finite dimensions this is harmless, but Kato notes explicitly the ordering matters in infinite dimensions. Training the right habit now.</div>
-    </div>
-
-    <h2>Connection to MTE-IPM</h2>
-
-    <div class="ipm-link">
-      <p>The IPM propagator is $n(m,t+1) = \int \mathcal{K}(m,m')\,n(m',t)\,dm'$ where $\mathcal{K} = P + F$. In MTE the kernel inherits metabolic scaling: vital rates go as $m^\alpha \cdot e^{-E/kT}$.</p>
-      <p style="margin-top:.75rem;">Kato's Part 2 gives me the language for the formalism question. The next step is carrying these tools into infinite dimensions (Ch. II–III) and exploiting the analytic structure of the MTE kernel (Ch. VII). The key bridge: understanding why the IPM operator on a bounded mass range is compact — and what compactness buys for spectral theory.</p>
-    </div>
-
-  </div>
-
-  <hr class="rule"/>
-
-  <div class="fade-up-3">
-    <h3>Open questions — for Friday meeting</h3>
-    <div class="open-qs">
-      <ul>
-        <li>The contour integral $P = -(2\pi i)^{-1}\oint R(\zeta)\,d\zeta$ works in finite dimensions. In the MTE-IPM setting $\mathcal{K}$ acts on $L^2$ — does it still converge in operator norm? Under what conditions on the kernel?</li>
-        <li>Can Jordan blocks occur in an IPM with MTE-derived kernel? I suspect Perron–Frobenius for positive kernels rules this out — but does the project assume simplicity of $\lambda_1$, or does it need to be proved?</li>
-        <li>The Boltzmann factor $e^{-E/kT}$ is real-analytic in $T$. Does this make $\mathcal{K}(T)$ an analytic family of operators (Kato Ch. VII)? If so, $\lambda_1(T)$ is analytic in temperature — a very clean result.</li>
-      </ul>
-    </div>
-
-    <h3>Next steps</h3>
-    <div class="next-steps-block">
-      <ol>
-        <li>Read Kato Ch. II §1–3 — bounded operators on Banach spaces, infinite-dimensional resolvent. Check which proofs from Ch. I carry over unchanged.</li>
-        <li>Find one paper from Olivia/Samraat's group. Check: which function space do they use for the IPM density? Do they invoke compactness of the kernel explicitly?</li>
-        <li>Verify the Hilbert–Schmidt claim: check whether $\iint |\mathcal{K}(m',m)|^2\,dm\,dm' < \infty$ for a concrete MTE kernel on a bounded mass domain.</li>
-      </ol>
-    </div>
-  </div>
-
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span>Anshu Mishra · IISER Berhampur</span>
-    <span><a href="../notes.html">← all notes</a></span>
-  </div>
-</footer>
+<footer>IISER Berhampur</footer>
 
 </body>
 </html>
